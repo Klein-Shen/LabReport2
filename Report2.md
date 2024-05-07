@@ -73,13 +73,18 @@ class ChatServer {
 
 ```
 
-<img width="505" alt="20240424201038" src="https://github.com/Klein-Shen/LabReport2/assets/165833763/ae500688-0284-4eef-af1b-fec8dcccf05c">
+<img width="454" alt="20240507164044" src="https://github.com/Klein-Shen/LabReport2/assets/165833763/9754e574-2895-4139-a2f9-a9f62fee2010">
 
-
-<img width="523" alt="20240424201050" src="https://github.com/Klein-Shen/LabReport2/assets/165833763/30767ad1-db71-4e3d-ae5a-a1d0634087a8">
+<img width="438" alt="20240507164054" src="https://github.com/Klein-Shen/LabReport2/assets/165833763/cf152847-dd71-426d-8d21-2e6bf43323a7">
 
 ## Which methods in your code are called?
-The code are called when java find the `query != null` is true.
+For the screenshots, I user command `curl "http://localhost:8000/chat?user=Ningqi&message=hello"`
+In the class `ChatHandler` and `handleRequest`. Since there do is `/chat?`. So `if (url.getPath().equals("/chat"))` this is true, in this code we split and check whether there is somethings we need or not.
+Like the code `if (shouldBeUser[0].equals("user") && shouldBeMessage[0].equals("message"))`.
+Since there is `/chat?user=Ningqi&message=hello` So the next code in the `if` command would be called. Than the message `Ningqi : hello` would be added to disaply.
+`String user` is Ningqi, `String message` is hello.
+And then the code `this.chatHistory += user + ": " + message + "\n\n";` and `return this.chatHistory;` will return the chat like what it is in the screenshots.
+        
 
 ## What are the relevant arguments to those methods, and the values of any relevant fields of the class?
 The relevant arguments are `s` , `&` , `user` , `/add-message?` , `and `=` . 
